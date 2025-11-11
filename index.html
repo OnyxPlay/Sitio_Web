@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onyx Play - WordShooter</title>
+    <link rel="stylesheet" href="Pruebanuevo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Ventana de presentación -->
+    <div id="presentation-window" class="presentation">
+        <div class="presentation-content">
+            <div class="logo-container">
+                <div class="logo-part part1"></div>
+                <div class="logo-part part2"></div>
+                <div class="logo-part part3"></div>
+                <div class="logo-part part4"></div>
+                <div class="logo-text">
+                    <h1>Onyx <span>Play</span></h1>
+                    <p>Presenta: WordShooter</p>
+                    <p class="subtitle">Aprende inglés destruyendo palabras</p>
+                </div>
+            </div>
+            <button id="enter-btn" class="enter-button">ENTRAR AL SITIO</button>
+        </div>
+    </div>
+
+    <!-- Página principal (oculta inicialmente) -->
+    <div id="main-page" class="main-content hidden">
+        <!-- Header -->
+        <header class="header">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>Word<span>Shooter</span></h1>
+                    <p class="by-onyx">by Onyx Play</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#historia">Historia</a></li>
+                    <li><a href="equipo.html">Nuestro Equipo</a></li>
+                    <li><a href="mision-vision.html">Misión y Visión</a></li>
+                    <li><a href="financiamiento.html">Financiamiento</a></li>
+                    <li><a href="index.html#descarga" class="download-btn">Descargar</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Sección Hero -->
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Domina el inglés, domina tu mundo</h2>
+                    <p>WordShooter es un videojuego 2D que te enseñará las 2000 palabras más importantes para hablar inglés con fluidez mientras te diviertes.</p>
+                    <div class="hero-buttons">
+                        <a href="#descarga" class="btn primary">Descargar Ahora</a>
+                        <a href="#historia" class="btn secondary">Conoce Más</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="game-preview">
+                        <img src="https://i.pinimg.com/originals/71/11/16/711116be28a9fe4bc8762031bd0932d7.gif" alt="Vista previa del juego">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Historia -->
+        <section id="historia" class="section history">
+            <div class="container">
+                <h2 class="section-title">Nuestra Historia</h2>
+                <div class="history-content">
+                    <div class="history-text">
+                        <p>La empresa Onyx Play recién entró al comercio el 08-10 del 2025. Durante todo este tiempo ha crecido bastante bien, trabajando para ofrecer conocimientos a través de juegos recreativos y educativos.</p>
+                        <p>Nuestra empresa ha implementado técnicas tradicionales combinadas con tecnología moderna para crear experiencias de aprendizaje únicas. WordShooter representa la culminación de este enfoque, combinando la diversión de los videojuegos con métodos educativos probados.</p>
+                        <p>Desde nuestro inicio, hemos mantenido el compromiso de hacer que el aprendizaje sea accesible y entretenido para todos, rompiendo las barreras que tradicionalmente han hecho que aprender un nuevo idioma sea un desafío.</p>
+                        <div class="milestones">
+                            <div class="milestone">
+                                <h3>2025</h3>
+                                <p>Fundación de Onyx Play</p>
+                            </div>
+                            <div class="milestone">
+                                <h3>2000+</h3>
+                                <p>Palabras en inglés</p>
+                            </div>
+                            <div class="milestone">
+                                <h3>10K+</h3>
+                                <p>Usuarios satisfechos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="history-image">
+                        <img src="https://images.steamusercontent.com/ugc/267212774694585062/32EC2855D85EF359E2A6B0144F475264DCDFDC2A/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" alt="Desarrollo del juego">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Descarga -->
+        <section id="descarga" class="section download">
+            <div class="container">
+                <div class="download-content">
+                    <div class="download-text">
+                        <h2>¡Descarga WordShooter Ahora!</h2>
+                        <p>Comienza tu viaje para dominar el inglés de la manera más divertida. Disponible para Windows, Mac y próximamente para móviles.</p>
+                        <div class="download-stats">
+                            <div class="stat">
+                                <h3>4.8/5</h3>
+                                <p>Calificación en AppStore</p>
+                            </div>
+                            <div class="stat">
+                                <h3>50K+</h3>
+                                <p>Descargas</p>
+                            </div>
+                            <div class="stat">
+                                <h3>94%</h3>
+                                <p>Usuarios satisfechos</p>
+                            </div>
+                        </div>
+                       <a href="juego/index.html" target="_blank" class="btn primary large">Jugar en el Navegador</a>
+                       <a href="juego.zip" download class="btn secondary large">Descargar para Windows</a>
+
+                    </div>
+                    <div class="download-image">
+                        <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Descarga el juego">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <div class="logo">
+                            <h2>Word<span>Shooter</span></h2>
+                            <p class="by-onyx">by Onyx Play</p>
+                        </div>
+                        <p>El videojuego que revoluciona el aprendizaje de inglés.</p>
+                        <div class="social-links">
+                            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook"></a>
+                            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384017.png" alt="Twitter"></a>
+                            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+                            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384012.png" alt="YouTube"></a>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contacto</h3>
+                        <div class="contact-info">
+                            <p><strong>Email:</strong> info@onyxplay.com</p>
+                            <p><strong>Teléfono:</strong> +1 (555) 123-4567</p>
+                            <p><strong>Horario:</strong> Lun - Vie: 9:00 - 18:00</p>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Dirección</h3>
+                        <div class="address">
+                            <p>123 Gaming Street</p>
+                            <p>Tech District, San Francisco</p>
+                            <p>CA 94103, Estados Unidos</p>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Enlaces Rápidos</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html#inicio">Inicio</a></li>
+                            <li><a href="index.html#historia">Historia</a></li>
+                            <li><a href="equipo.html">Equipo</a></li>
+                            <li><a href="financiamiento.html">Precios</a></li>
+                            <li><a href="#">Política de Privacidad</a></li>
+                            <li><a href="#">Términos de Servicio</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2023 Onyx Play. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="Pruebanuevo.js"></script>
+</body>
+</html>
