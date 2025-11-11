@@ -526,3 +526,44 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// ============================================================
+// 📱 Secciones desplegables hacia la izquierda (solo móvil)
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth <= 768) {
+        const sections = document.querySelectorAll('.section');
+
+        sections.forEach(sec => {
+            // Ignorar secciones pequeñas o que no tengan contenido
+            if (!sec.querySelector('h2')) return;
+
+            // Crear encabezado clickeable
+            const title = sec.querySelector('h2');
+            const wrapper = document.createElement('div');
+            wrapper.classList.add('section-header');
+            wrapper.textContent = title.textContent;
+
+            // Crear contenedor del contenido
+            const body = document.createElement('div');
+            body.classList.add('section-body');
+
+            // Mover todo el contenido dentro del cuerpo
+            const elements = Array.from(sec.children).filter(el => el !== title);
+            elements.forEach(el => body.appendChild(el));
+
+            // Limpiar la sección y agregar estructura acordeón
+            sec.classList.add('collapsible');
+            sec.innerHTML = '';
+            sec.appendChild(wrapper);
+            sec.appendChild(body);
+
+            // Evento para abrir/cerrar
+            wrapper.addEventListener('click', () => {
+                const isActive = sec.classList.contains('active');
+                document.querySelectorAll('.section.collapsible').forEach(s => s.classList.remove('active'));
+                if (!isActive) sec.classList.add('active');
+            });
+        });
+    }
+});
