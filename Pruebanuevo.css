@@ -2125,3 +2125,52 @@ body {
         padding: 60px 0;
     }
 }
+
+/* ============================================================
+   📱 ACORDEONES EN MODO MÓVIL (DESPLEGABLES HACIA LA IZQUIERDA)
+============================================================ */
+@media (max-width: 768px) {
+    .section[data-collapsible] {
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* Contenedor del contenido plegable */
+    .section[data-collapsible] .section-content {
+        position: relative;
+        left: 100%;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.4s ease;
+    }
+
+    /* Al abrir, el contenido se desplaza hacia la izquierda */
+    .section[data-collapsible].active .section-content {
+        left: 0;
+        opacity: 1;
+        max-height: 1000px;
+        padding-top: 10px;
+    }
+
+    /* Título clickeable */
+    .section[data-collapsible] .section-title {
+        cursor: pointer;
+        position: relative;
+        padding-right: 40px;
+    }
+
+    /* Flecha animada */
+    .section[data-collapsible] .section-title::after {
+        content: "▶";
+        position: absolute;
+        right: 15px;
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+    }
+
+    .section[data-collapsible].active .section-title::after {
+        transform: rotate(90deg);
+    }
+}
+
