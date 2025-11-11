@@ -1967,4 +1967,161 @@ body {
 .stat-card.animate-in {
     opacity: 1;
     transform: translateY(0);
+
+}
+
+/* ============================================================
+   📱 RESPONSIVE DESIGN (AJUSTE MÓVIL)
+============================================================ */
+
+/* ----- Tablets (pantallas medianas) ----- */
+@media (max-width: 992px) {
+    .hero-content,
+    .download-content,
+    .history-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text, 
+    .download-text, 
+    .history-text {
+        padding-right: 0;
+    }
+
+    .hero-buttons, 
+    .download-stats {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .hero-image, 
+    .download-image, 
+    .history-image {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .team-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        max-width: 90%;
+    }
+
+    .pricing-cards, 
+    .mv-grid, 
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+}
+
+/* ----- Celulares (pantallas pequeñas) ----- */
+@media (max-width: 768px) {
+    /* Menú hamburguesa */
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        background-color: var(--secondary-black);
+        flex-direction: column;
+        width: 70%;
+        height: calc(100vh - 70px);
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu li {
+        margin: 20px 0;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: var(--text-light);
+        margin: 3px 0;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Ajustes generales */
+    .hero-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .btn.large {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-content {
+        gap: 30px;
+    }
+
+    .mv-card, .pricing-card, .value-card {
+        padding: 25px 20px;
+    }
+}
+
+/* ----- Celulares muy pequeños (menores a 480px) ----- */
+@media (max-width: 480px) {
+    .hero-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px 20px;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .by-onyx {
+        font-size: 0.7rem;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
 }
