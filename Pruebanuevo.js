@@ -487,4 +487,42 @@ const modalStyles = `
 // Inyectar estilos del modal
 const styleSheet = document.createElement('style');
 styleSheet.textContent = modalStyles;
+
 document.head.appendChild(styleSheet);
+
+// ============================================================
+// 📱 Acordeones en celular con animación hacia la izquierda
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth <= 768) {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.setAttribute('data-collapsible', '');
+            
+            const title = section.querySelector('.section-title');
+            if (title) {
+                // Crear contenedor para el contenido
+                let contentWrapper = document.createElement('div');
+                contentWrapper.classList.add('section-content');
+                
+                let siblings = [];
+                let next = title.nextElementSibling;
+                while (next) {
+                    siblings.push(next);
+                    next = next.nextElementSibling;
+                }
+                siblings.forEach(el => contentWrapper.appendChild(el));
+                section.appendChild(contentWrapper);
+
+                // Evento para desplegar hacia la izquierda
+                title.addEventListener('click', () => {
+                    const isActive = section.classList.contains('active');
+                    // Cierra los demás acordeones
+                    document.querySelectorAll('.section[data-collapsible]').forEach(sec => sec.classList.remove('active'));
+                    // Abre el seleccionado si no estaba activo
+                    if (!isActive) section.classList.add('active');
+                });
+            }
+        });
+    }
+});
