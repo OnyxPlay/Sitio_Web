@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de Inglés</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    #menu {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      z-index: 10;
+      animation: aparecer 1s ease-out;
+    }
+
+    button {
+      background: #ff6b00;
+      border: none;
+      padding: 12px 30px;
+      color: white;
+      font-size: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff8c1a;
+    }
+
+    #instrucciones {
+      display: none;
+      font-size: 18px;
+      max-width: 600px;
+      text-align: left;
+      margin: 0 auto;
+    }
+
+    #gameCanvas {
+      background: #222;
+      display: block;
+      margin: 100px auto 0;
+    }
+
+    /* Animación de aparición */
+    @keyframes aparecer {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Animación de salida */
+    @keyframes desaparecer {
+      from { opacity: 1; transform: scale(1); }
+      to { opacity: 0; transform: scale(1.05); }
+    }
+
+    /* Clase que activa la animación de salida */
+    #menu.desaparecer {
+      animation: desaparecer 0.8s ease-in forwards;
+    }
+
+    #loadingText {
+      animation: parpadeo 1s infinite alternate;
+    }
+
+    @keyframes parpadeo {
+      from { opacity: 0.3; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="menu">
+    <h1>Aprende Inglés Jugando</h1>
+    <button id="btnJugar">Jugar</button>
+    <button id="btnInstrucciones">Instrucciones</button>
+    <button id="btnSalir">Salir</button>
+
+    <div id="instrucciones">
+      <h2>Cómo jugar:</h2>
+      <ul>
+        <li>Usa las flechas ← → para moverte</li>
+        <li>Presiona ↑ para saltar</li>
+        <li>Usa la barra espaciadora para disparar</li>
+        <li>Aprende palabras de inglés cada 5 segundos</li>
+        <li>Supera enemigos y avanza por los biomas</li>
+      </ul>
+    </div>
+
+    <p id="loadingText" style="display:none; font-size:20px; color:#ffae00;">Cargando...</p>
+  </div>
+
+  <h3>Palabra de inglés: <span id="word">Hello</span></h3>
+  <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+  <script src="game.js"></script>
+
+  <script>
+    const btnJugar = document.getElementById('btnJugar');
+    const btnInstrucciones = document.getElementById('btnInstrucciones');
+    const btnSalir = document.getElementById('btnSalir');
+    const menu = document.getElementById('menu');
+    const instrucciones = document.getElementById('instrucciones');
+    const loadingText = document.getElementById('loadingText');
+
+    // Botón "Jugar"
+    btnJugar.addEventListener('click', () => {
+      loadingText.style.display = 'block'; // muestra "Cargando..."
+      menu.classList.add('desaparecer');   // animación de salida
+
+      setTimeout(() => {
+        menu.style.display = 'none';
+        if (typeof generarEnemigos === 'function' && typeof animate === 'function') {
+          generarEnemigos(); // genera enemigos dinámicos
+          animate();         // inicia el juego
+        }
+      }, 1200);
+    });
+
+    // Botón "Instrucciones"
+    btnInstrucciones.addEventListener('click', () => {
+      instrucciones.style.display = instrucciones.style.display === 'none' ? 'block' : 'none';
+    });
+
+    // Botón "Salir"
+    btnSalir.addEventListener('click', () => {
+      if (confirm("¿Deseas salir del juego?")) {
+        window.close();
+      }
+    });
+  </script>
+</body>
+</html>
